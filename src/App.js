@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Testprops from './Testprops';
+import Buttonchange from './button';
+
+const Themecontext = React.createContext();
 
 function App() {
+ const [theme , settheme]=useState("light");
+ const Toggletheme= ()=>{
+    if(theme==="light"){
+      settheme("dark")
+    }
+    else{
+      settheme("light");
+    }
+ }
   return (
+    <Themecontext.Provider value={{theme,Toggletheme}}>
+      <Buttonchange></Buttonchange>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Testprops></Testprops>
     </div>
+    </Themecontext.Provider>
   );
 }
 
-export default App;
+export {App,Themecontext} ;
