@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Testprops from './Testprops';
-import Buttonchange from './button';
-
-const Themecontext = React.createContext();
+import Register from './register'
+import Login from './login';
+import Welcome from './welcome';
+import { BrowserRouter, Routes,Route} from "react-router-dom";
 
 function App() {
- const [theme , settheme]=useState("light");
- const Toggletheme= ()=>{
-    if(theme==="light"){
-      settheme("dark")
-    }
-    else{
-      settheme("light");
-    }
- }
+
   return (
-    <Themecontext.Provider value={{theme,Toggletheme}}>
-      <Buttonchange></Buttonchange>
-    <div className="App">
-  <Testprops></Testprops>
-    </div>
-    </Themecontext.Provider>
-  );
+        <>
+        <BrowserRouter>
+        <Routes>
+          <Route path='/register'  element = {<Register/>} />
+          <Route path='/login'  element = {<Login/>} />
+          <Route path='/welcome'  element = {<Welcome/>} />
+        </Routes>
+        </BrowserRouter>
+        
+        </>
+  )
 }
 
-export {App,Themecontext} ;
+export default App ;

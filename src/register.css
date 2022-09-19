@@ -1,0 +1,19 @@
+.registercard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 200px;
+    width: 400px;
+    -webkit-box-shadow: 10px 9px 25px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 9px 25px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 9px 25px -8px rgba(0, 0, 0, 0.75);
+    background-color: lightgrey;
+    margin-top: 10%;
+    margin-left: 30%;
+}
+
+.registercard div {
+    margin: 5px;
+}
